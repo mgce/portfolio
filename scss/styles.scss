@@ -1,0 +1,67 @@
+$color-grey: #EDEDED;
+$color-yellow: #F6FC30;
+$color-graphite: #2B2B2B;
+@import url('link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">');
+
+body{
+    background-color: $color-grey;
+    color: $color-graphite;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+header{
+    display: grid;
+    grid-template-areas: 
+    ". nav   ."
+    ". intro .";
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 1fr repeat();
+    height: 100vh;
+}
+
+nav{
+    grid-area: nav;
+    margin-top: 1rem;
+    .left-groupped-menu{
+        float: right; 
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: inline;
+            a{
+                font-weight: 300;
+                display: block;
+            }
+        }
+    }
+}
+
+.intro{
+    grid-area: intro;
+    h1{
+        margin: 0;
+        font-size: 4rem;
+        font-weight: 600;
+    }
+    h2{
+        margin: 0;
+        font-size: 4rem;
+        font-weight: 400;
+    }
+    p{
+        margin: 1rem, 0,0 ,0;
+        font-weight: 300;
+        max-width: 50rem;
+    }
+
+    .yellow-background{
+        margin: 0;
+        padding: 0rem 0.5rem 0rem 0.5rem;
+        display: inline;
+        background-color: $color-yellow;
+    }
+}
