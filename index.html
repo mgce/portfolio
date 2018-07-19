@@ -7,6 +7,7 @@
   <title>Portfolio</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="scss/styles.css?v=1.0">
 
@@ -16,20 +17,31 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav>
             <b>Portfolio</b>
-            <div class="left-groupped-menu">
+            <div class="right-groupped-menu" id="right-menu">
+                <a href="javascript:void(0)" class="hamburger" onClick="expandHamburger()">
+                        <img src="img/hamburger.svg" alt="Hamburger">
+                </a>
+                <div class="menu-items">
                 <ul>
                     <li>PROJECTS</li>
                     <li>CONTACT</li>
-                    <li>Linkedin</li>
-                    <li>Behance</li>
+                    <li>
+                        <div class="social-group">
+                            <a href="#"><img src="img/linkedin.svg" alt="Linkedin"></a>
+                            <a href="#"><img src="img/behance.svg" alt="Behance"></a>
+                        </div>
+                    </li>
+                </div>
                 </ul>
             </div>
         </nav>
-        <section class="intro">
-            <div>
+        <section class="intro" id="introduction">
+            <div class="background-number">01</div>
+            <div class="intro-text">
+                <p><div class="graphite-bold-text">01</div> Introduction</p>
                 <h2><div class="yellow-background">Hello,</div> I am a</h2>
                 <h1>Graphic Designer</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

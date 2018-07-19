@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px){
+    .header{
+        width: 100%
+    }
+
+nav{
+    .right-groupped-menu{
+        float: none;
+        display: inline;
+        ul{
+            li{
+                display: block;
+                margin-top: 0.5rem;
+            }
+        }
+        .hamburger{
+            float: right;
+            display: inline;
+        }
+        .menu-items{
+            background-color: $color-darkgrey;
+        }
+    }
+}
+    
+
+    
+}
