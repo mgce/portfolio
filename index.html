@@ -17,30 +17,38 @@
 </head>
 
 <body>
-    <header id="header">
+    <div class="container">
         <nav>
-            <b>Portfolio</b>
-            <div class="right-groupped-menu" id="right-menu">
-                <a href="javascript:void(0)" class="hamburger" onClick="expandHamburger()">
+            <div id="logotype">
+                PORTFOLIO<b>XYZ </b>
+            </div>
+            <div class="nav-menu">
+                <!-- <a href="javascript:void(0)" id="hamburger" onClick="expandHamburger()">
                         <img src="img/hamburger.svg" alt="Hamburger">
-                </a>
-                <div class="menu-items">
+                </a> -->
+                <div id="hamburger" onClick="expandHamburger()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="nav-menu-items">
                 <ul>
-                    <li>PROJECTS</li>
-                    <li>CONTACT</li>
+                    <li><a href="#">PROJECTS</a></li>
+                    <li><a href="#">CONTACT</a></li>
                     <li>
                         <div class="social-group">
                             <a href="#"><img src="img/linkedin.svg" alt="Linkedin"></a>
                             <a href="#"><img src="img/behance.svg" alt="Behance"></a>
                         </div>
                     </li>
-                </div>
                 </ul>
             </div>
+            </div>
         </nav>
-        <section class="intro" id="introduction">
+        <section id="intro">
             <div class="background-number">01</div>
-            <div class="intro-text">
+            <div class="text-section">
                 <p><div class="graphite-bold-text">01</div> Introduction</p>
                 <h2><div class="yellow-background">Hello,</div> I am a</h2>
                 <h1>Graphic Designer</h1>
@@ -49,7 +57,13 @@
                     Nullam in odio sapien. Fusce quis vestibulum diam.</p>
             </div>
         </section>
-    </header>
+        <section id="portfolio">
+            <div class="text-section">
+                    <p><div class="graphite-bold-text">02</div> Portfolio</p>
+                    <h2><div class="yellow-background">Show</div> me ................</h2>
+                </div>
+        </section>
+    </div>
   <script src="js/scripts.js"></script>
 </body>
 </html>

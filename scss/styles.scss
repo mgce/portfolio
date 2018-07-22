@@ -2,103 +2,137 @@ $color-grey: #EDEDED;
 $color-yellow: #F6DC30;
 $color-graphite: #2B2B2B;
 $color-darkgrey: #E6E6E6;
-@import url('link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">');
-
+@import url('link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800" rel="stylesheet">');
+@import 'hamburger';
 
 body{
     background-color: $color-grey;
     color: $color-graphite;
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
+    margin: 0;
 }
 
-header{
+h1{
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 600;
+}
+h2{
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 400;
+}
+p{
+    margin: 1rem, 0,0 ,0;
+    font-weight: 300;
+    max-width: 50rem;
+}
+
+a{
+    color: #2B2B2B;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+a:hover{
+    font-weight: 800;
+    transition: 0.2s;
+}
+
+.container{
     display: grid;
     grid-template-areas: 
     ". nav   ."
-    ". intro .";
+    ". intro ."
+    ". portfolio .";
     grid-template-columns: 5% 1fr 5%;
 }
 
-
+#logotype{
+    font-weight: 400;
+    display: inline;
+    position: relative;
+    z-index: 1;
+    font-size: 12px;
+    background:$color-graphite;
+    color:$color-grey;
+    padding: 0.3rem 0.8rem 0.3rem 0.8rem; 
+}
 
 nav{
     grid-area: nav;
     margin-top: 1rem;
     height: auto;
-    .right-groupped-menu{
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        padding-right: 2rem;
+        display: inline;
+    }
+
+    
+    #nav-menu-items{
+        display: block;
+        margin: 0;
+        position: relative;
+    }
+
+    .nav-menu{
         float: right; 
-        ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+    }
+
+    .social-group{
+        display: inline;
+        margin: 0;
+        a{
+            margin-right: 0.5rem; 
         }
-        li{
-            font-weight: 400;
-            padding-right: 2rem;
-            display: inline;
-            
-        }
-        .social-group{
-            display: inline;
-            margin: 0;
-            a{
-                margin-right: 0.5rem; 
-            }
-            img{
-                width: 1rem;
-            }
-        }
-        .hamburger{
-            display: none;
-        }
-        .menu-items{
-            margin: 0;
+        img{
+            width: 1rem;
         }
     }
 }
 
-.intro{
+.text-section{
+    grid-column-start: 2;
+}
+
+#portfolio{
+    grid-area: portfolio;
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+    height: 100vh;
+}
+
+#intro{
     grid-area: intro;
     display: grid;
     grid-template-columns: 5% 1fr 5%;
     height: 100vh;
-    .intro-text{
+    .text-section{
         margin-top: 10rem;
-        grid-column-start: 2;
-    }
-
-    h1{
-        margin: 0;
-        font-size: 4rem;
-        font-weight: 600;
-    }
-    h2{
-        margin: 0;
-        font-size: 4rem;
-        font-weight: 400;
-    }
-    p{
-        margin: 1rem, 0,0 ,0;
-        font-weight: 300;
-        max-width: 50rem;
-    }
-
-    .yellow-background{
-        margin: 0;
-        padding: 0rem 0.5rem 0rem 0.5rem;
-        display: inline;
-        background-color: $color-yellow;
-    }
-
-    .graphite-bold-text{
-        margin: 0;
-        display: inline;
-        color: $color-yellow;
-        font-weight: 600;
     }
 }
-        
+   
+.yellow-background{
+    margin: 0;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    display: inline;
+    background-color: $color-yellow;
+}
+
+.graphite-bold-text{
+    margin: 0;
+    display: inline;
+    color: $color-yellow;
+    font-weight: 600;
+}
+
 .background-number{
     margin-left: -15rem;
     font-size: 30rem;
