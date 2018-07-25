@@ -1,9 +1,12 @@
 $color-grey: #EDEDED;
 $color-yellow: #F6DC30;
 $color-graphite: #2B2B2B;
+$color-darkgraphite: rgb(29, 29, 29);
 $color-darkgrey: #E6E6E6;
-@import url('link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800" rel="stylesheet">');
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800);
 @import 'hamburger';
+@import 'post';
+@import 'contactForm';
 
 body{
     background-color: $color-grey;
@@ -47,6 +50,7 @@ a:hover{
     ". intro ."
     ". portfolio .";
     grid-template-columns: 5% 1fr 5%;
+
 }
 
 #logotype{
@@ -102,20 +106,45 @@ nav{
     grid-column-start: 2;
 }
 
-#portfolio{
-    grid-area: portfolio;
-    display: grid;
-    grid-template-columns: 5% 1fr 5%;
-    height: 100vh;
-}
-
 #intro{
     grid-area: intro;
     display: grid;
     grid-template-columns: 5% 1fr 5%;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     .text-section{
         margin-top: 10rem;
+    }
+}
+
+#portfolio{
+    grid-area: portfolio;
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+    min-height: 100vh;
+    height: 100%;
+}
+
+#contact{
+    display: grid;
+    grid-row: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-template-columns: 5% 1fr 5%;
+    min-height: 100vh;
+    height: 100%;
+    background: $color-graphite;
+    .background-number{
+        color: $color-darkgraphite;
+    }
+
+    .text-section{
+        margin-top: 5rem;
+        color: white;
+    }
+
+    h2{
+        color: $color-yellow;
     }
 }
    

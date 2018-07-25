@@ -54,4 +54,10 @@ nav{
     margin-top: 3rem;
 }
 
+.post{
+    ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 }

@@ -3,13 +3,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   <title>Portfolio</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="scss/styles.css?v=1.0">
+  <!-- <link rel="stylesheet" href="scss/styles.css?v=1.0"> -->
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -23,9 +22,6 @@
                 PORTFOLIO<b>XYZ </b>
             </div>
             <div class="nav-menu">
-                <!-- <a href="javascript:void(0)" id="hamburger" onClick="expandHamburger()">
-                        <img src="img/hamburger.svg" alt="Hamburger">
-                </a> -->
                 <div id="hamburger" onClick="expandHamburger()">
                     <span></span>
                     <span></span>
@@ -58,12 +54,23 @@
             </div>
         </section>
         <section id="portfolio">
+            <div class="background-number">02</div>
             <div class="text-section">
-                    <p><div class="graphite-bold-text">02</div> Portfolio</p>
-                    <h2><div class="yellow-background">Show</div> me ................</h2>
-                </div>
+                <p><div class="graphite-bold-text">02</div> Portfolio</p>
+                <div id="gallery"></div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="background-number">03</div>
+            <div class="text-section">
+                <p><div class="graphite-bold-text">03</div> Contact</p>
+                <h2>Send me a message</h2>
+                <div id="contactForm"></div>
+            </div>
         </section>
     </div>
   <script src="js/scripts.js"></script>
+  <script src="js/gallery-compiled.js"></script>
+  <script src="js/contactForm-compiled.js"></script>
 </body>
 </html>
