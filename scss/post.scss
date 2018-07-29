@@ -2,9 +2,18 @@
     ul{
         padding: 0; 
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 40px;
         list-style: none;
+        li{
+            justify-self: center;
+        }
+    }
+    p{
+        display: block;
+        font-size: 10pt;
+        font-weight: 400;
+        margin: 0;
     }
 }
 
@@ -23,7 +32,7 @@
         opacity: 1;
         position: absolute;
         font-size: 35px;
-        font-weight: 400;
+        font-weight: 600;
         -webkit-transition: 1s ease-out;
         transition: 0.2s ease-in;
         .title{
@@ -31,6 +40,10 @@
             transition: all 0.2s;
             top: 0px;
             opacity: 0;
+            width: 90%;
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
         }
         .yellow-stripe{
             width: 50%;
@@ -40,7 +53,6 @@
 }
 .post-item:hover{
     .post-title{
-        // opacity: 0.5;
         background: rgba(237,237,237,0.7);
         .title{
             opacity: 1;

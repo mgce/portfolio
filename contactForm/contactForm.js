@@ -20,7 +20,6 @@ class ContactForm extends React.Component{
     }
     render(){
         return(
-        <div>
             <form className="contact-form">
                 <ul>
                     <li>
@@ -50,8 +49,8 @@ class ContactForm extends React.Component{
                         onChange={this.handleChange}/>
                     </li>
                 </ul>
+                <button className="submit-btn">SEND</button>
             </form>
-        </div>
     )
     }
 }

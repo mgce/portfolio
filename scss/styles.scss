@@ -1,5 +1,6 @@
 $color-grey: #EDEDED;
 $color-yellow: #F6DC30;
+$color-lightgraphite: rgb(100, 100, 104);
 $color-graphite: #2B2B2B;
 $color-darkgraphite: rgb(29, 29, 29);
 $color-darkgrey: #E6E6E6;
@@ -35,12 +36,19 @@ p{
 a{
     color: #2B2B2B;
     text-decoration: none;
-    font-size: 12px;
+    // 
     font-weight: 600;
 }
 a:hover{
     font-weight: 800;
     transition: 0.2s;
+}
+
+.submit-btn{
+    background: $color-yellow;
+    border: 0;
+    padding: 1rem 2rem 1rem 2rem;
+    font-weight: 600;
 }
 
 .container{
@@ -78,27 +86,27 @@ nav{
         padding-right: 2rem;
         display: inline;
     }
-
     
     #nav-menu-items{
         display: block;
         margin: 0;
         position: relative;
+        font-size: 12px;
     }
 
     .nav-menu{
         float: right; 
     }
+}
 
-    .social-group{
-        display: inline;
-        margin: 0;
-        a{
-            margin-right: 0.5rem; 
-        }
-        img{
-            width: 1rem;
-        }
+.social-group{
+    display: inline;
+    margin: 0;
+    a{
+        margin-right: 0.5rem; 
+    }
+    img{
+        width: 1rem;
     }
 }
 
@@ -123,6 +131,7 @@ nav{
     grid-template-columns: 5% 1fr 5%;
     min-height: 100vh;
     height: 100%;
+    margin-bottom: 10rem;
 }
 
 #contact{
@@ -131,7 +140,7 @@ nav{
     grid-column-start: 1;
     grid-column-end: 4;
     grid-template-columns: 5% 1fr 5%;
-    min-height: 100vh;
+    // min-height: 100vh;
     height: 100%;
     background: $color-graphite;
     .background-number{
@@ -170,6 +179,46 @@ nav{
     font-weight: 300;
     overflow: hidden;
     z-index: -1;
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    #contactForm{
+        grid-column: 1;
+    }
+    .contact-social{
+        grid-column: 2;      
+        
+    }
+}
+
+.contact-social{
+        display: flex;
+        align-items: center;
+        align-self: center;
+        flex-direction: column;
+    p{
+        font-size: 11pt;
+        margin: 0.5rem;
+    }
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    h3{
+        margin: 0;
+    }
+    p{
+        color: $color-lightgraphite;
+        font-size: 9pt;
+        margin: 0;
+    }
 }
 
 @import 'styles-768';

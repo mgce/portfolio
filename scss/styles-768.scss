@@ -61,3 +61,11 @@ nav{
 }
 
 }
+
+@media screen and (max-width: 900px){
+    .post{
+        ul{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
