@@ -55,6 +55,7 @@ class Gallery extends React.Component{
         )
         return (
             <div className="post">
+                <Dropdown list={this.state.categories} />
                 <ul>
                     {postList}
                 </ul>
@@ -91,5 +92,46 @@ const Post = ({img, link, title, postCategory, allCategoryList}) => {
     )
     
 }
+
+class Dropdown extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            listOpen: true,
+            headerTitle: this.props.title
+        }
+    }
+    toggleList(){
+        this.setState(prevState => ({
+            listOpen: !prevState.listOpen
+        }))
+    }
+    render(){
+        const{list} = this.props;
+        const{listOpen} = this.state;
+        return(
+            <div className="dd-wrapper">
+                <div className="dd-header" onClick={()=> this.toggleList()}>
+                    <h1>
+                        <div class="yellow-background">Show</div> me .......
+                    </h1>
+                </div>
+                {listOpen && <ul className="dd-list">
+                    {list.map(item => (
+                        <li className="dd-list-item" key={item.id}>{item.name}</li>
+                    ))}
+                </ul>}
+            </div>
+        )
+    }
+}
+
+// const Dropdown = (props) => (
+//     <div>
+//         <h1>
+//             <div class="yellow-background">Show</div> me .......
+//         </h1>
+//     </div>
+// )
 
 ReactDOM.render(<Gallery/>, document.getElementById("gallery"));

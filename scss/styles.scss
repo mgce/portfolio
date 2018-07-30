@@ -150,7 +150,7 @@ nav{
     }
     .mouse-arrow{
         width: 0.8rem;
-        animation: UpAndDown 1.5s infinite;
+        animation: UpAndDown 1s infinite;
     }
 }
 
@@ -158,6 +158,10 @@ nav{
     0%{
         opacity: 1;
         padding-top: 1rem;
+    }
+    80%{
+        opacity: 0.85;
+        padding-top: 0.3rem;
     }
     100%{
         opacity: 0.5;

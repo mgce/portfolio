@@ -318,6 +318,7 @@ nav .nav-menu {
 }
 .arrow-down {
   grid-column-start: 2;
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
