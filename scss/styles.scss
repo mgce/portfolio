@@ -111,8 +111,11 @@ nav{
 }
 
 .text-section{
+    transition: all 0.6s;
     grid-column-start: 2;
 }
+
+
 
 #intro{
     grid-area: intro;
@@ -122,8 +125,45 @@ nav{
     height: 100%;
     .text-section{
         margin-top: 10rem;
+        animation: AppearFromBottom 3s 1;
     }
 }
+
+@keyframes AppearFromBottom{
+    0%{
+        opacity: 0;
+        margin-top: 20rem;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 10rem;
+    }
+}  
+
+.arrow-down{
+    grid-column-start: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    img{
+        width: 1.2rem;
+    }
+    .mouse-arrow{
+        width: 0.8rem;
+        animation: UpAndDown 1.5s infinite;
+    }
+}
+
+@keyframes UpAndDown{
+    0%{
+        opacity: 1;
+        padding-top: 1rem;
+    }
+    100%{
+        opacity: 0.5;
+        padding-top: 0rem;
+    }
+}  
 
 #portfolio{
     grid-area: portfolio;
@@ -220,5 +260,7 @@ nav{
         margin: 0;
     }
 }
+
+
 
 @import 'styles-768';

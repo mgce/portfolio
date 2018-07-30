@@ -16,21 +16,7 @@ class Gallery extends React.Component{
         }
     }
     componentDidMount(){
-        // axios.get(url + "posts")
-        // .then(response => {
-        //     var posts = response.data;
-        //     return Promise.all(posts.map((post)=>{
-        //         return axios.get(url + "media/" + post.featured_media)
-        //         .then(response => {
-        //             post.image = response.data;
-        //             return post;
-        //         })
-        //     }) 
-        //     ).then(posts=> this.setState(prevState => ({
-        //         posts: posts
-        //     })
-        //     )).catch((error)=> console.log(error))
-        // });
+
         axios.all(
         axios.get(url + "posts?status=publish&per_page=11")
         .then(response => {

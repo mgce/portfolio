@@ -62,10 +62,26 @@ nav{
 
 }
 
-@media screen and (max-width: 900px){
+@media screen and (min-width: 1600px){
+    $top-margin-intro: 20rem;
     .post{
         ul{
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
     }
+
+    .text-section{
+        transition: all 0.6s;
+    }
+
+      @keyframes AppearFromBottom{
+        0%{
+            opacity: 0;
+            margin-top: 30rem;
+        }
+        100%{
+            opacity: 1;
+            margin-top: $top-margin-intro;
+        }
+    }  
 }
