@@ -8,6 +8,7 @@ $color-darkgrey: #E6E6E6;
 @import 'hamburger';
 @import 'post';
 @import 'contactForm';
+@import 'dropdown';
 
 body{
     background-color: $color-grey;
@@ -115,14 +116,13 @@ nav{
     grid-column-start: 2;
 }
 
-
-
 #intro{
     grid-area: intro;
     display: grid;
     grid-template-columns: 5% 1fr 5%;
     min-height: 100vh;
     height: 100%;
+    position: relative;
     .text-section{
         margin-top: 10rem;
         animation: AppearFromBottom 3s 1;
@@ -176,6 +176,7 @@ nav{
     min-height: 100vh;
     height: 100%;
     margin-bottom: 10rem;
+    position: relative;
 }
 
 #contact{
@@ -187,6 +188,7 @@ nav{
     // min-height: 100vh;
     height: 100%;
     background: $color-graphite;
+    position: relative;
     .background-number{
         color: $color-darkgraphite;
     }

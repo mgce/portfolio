@@ -11,12 +11,26 @@ class Gallery extends React.Component{
         super(props);
         this.state = {
             posts: [],
+            visiblePosts: [],
             images: [],
             categories: [],
+            selectedCategory: ''
         }
+        this.filterPostsByCategory = this.filterPostsByCategory.bind(this);
+    }
+    filterPostsByCategory(categoryId){
+        const selectedCategory = this.state.categories.find(x=>x.id === categoryId);
+        this.setState(prevState => ({
+            selectedCategory: selectedCategory.name.toLowerCase()
+        }))
+        let posts = this.state.posts.filter(x=>x.categories.includes(categoryId))
+        if(posts === undefined)
+            posts = [];
+        this.setState(prevState => ({
+            visiblePosts: posts
+        }))
     }
     componentDidMount(){
-
         axios.all(
         axios.get(url + "posts?status=publish&per_page=11")
         .then(response => {
@@ -28,21 +42,25 @@ class Gallery extends React.Component{
                     return post;
                 })
             }) 
-            ).then(posts=> this.setState(prevState => ({
-                posts: posts
+            ).then(
+                posts=> {this.setState(prevState => ({
+                    posts: posts,
+                    visiblePosts: posts
             })
-            )).catch((error)=> console.log(error))
+            )
+        }
+        ).catch((error)=> console.log(error))
         }),
         axios.get(url+"categories").then(response=> this.setState(prevState => ({
-            categories : response.data
+            categories : response.data,
+            selectedCategory : response.data[0].name
         })))
     ).then(axios.spread());
         
     }
     render(){
-        const postList = this.state.posts.map(
+        const postList = this.state.visiblePosts.map(
             (post, index)=>{
-                console.log(post);
                 if(post!== undefined)
                     return <Post 
                     key={post.id} 
@@ -54,11 +72,17 @@ class Gallery extends React.Component{
             }
         )
         return (
-            <div className="post">
-                <Dropdown list={this.state.categories} />
-                <ul>
-                    {postList}
-                </ul>
+            <div>
+                <Dropdown 
+                list={this.state.categories} 
+                selectedCategory = {this.state.selectedCategory}
+                filterPostsByCategory={this.filterPostsByCategory}/>
+                <div className="post">
+                    
+                    <ul>
+                        {postList}
+                    </ul>
+                </div>
             </div>
         )
     }
@@ -97,28 +121,38 @@ class Dropdown extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            listOpen: true,
+            listOpen: false,
             headerTitle: this.props.title
         }
     }
     toggleList(){
+        var arrow = document.getElementById('dropdown-arrow');
+        if(arrow.className === "rotated")
+            arrow.className = "";
+        else
+            arrow.className += "rotated";
+
         this.setState(prevState => ({
             listOpen: !prevState.listOpen
         }))
     }
     render(){
-        const{list} = this.props;
+        const{list, selectedCategory} = this.props;
         const{listOpen} = this.state;
         return(
             <div className="dd-wrapper">
-                <div className="dd-header" onClick={()=> this.toggleList()}>
+                <div className="dd-header">
                     <h1>
-                        <div class="yellow-background">Show</div> me .......
+                        <div className="yellow-background">Show</div> me 
                     </h1>
+                <div className="dd-arrow"  onClick={()=> this.toggleList()}>
+                    <img id="dropdown-arrow" src="./img/dropdown-arrow.svg"/>
+                </div>
+                <div className="dd-selectedItem">{selectedCategory}</div>
                 </div>
                 {listOpen && <ul className="dd-list">
                     {list.map(item => (
-                        <li className="dd-list-item" key={item.id}>{item.name}</li>
+                        <li className="dd-list-item" key={item.id} onClick={() => this.props.filterPostsByCategory(item.id)} >{item.name}</li>
                     ))}
                 </ul>}
             </div>

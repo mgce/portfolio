@@ -193,6 +193,13 @@ textarea {
   resize: none;
 }
 
+.dd-list ul {
+  list-style: none;
+}
+.dd-list ul li {
+  display: inline;
+}
+
 body {
   background-color: #EDEDED;
   color: #2B2B2B;
@@ -300,6 +307,7 @@ nav .nav-menu {
   grid-template-columns: 5% 1fr 5%;
   min-height: 100vh;
   height: 100%;
+  position: relative;
 }
 #intro .text-section {
   margin-top: 10rem;
@@ -318,7 +326,6 @@ nav .nav-menu {
 }
 .arrow-down {
   grid-column-start: 2;
-  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -328,13 +335,17 @@ nav .nav-menu {
 }
 .arrow-down .mouse-arrow {
   width: 0.8rem;
-  animation: UpAndDown 1.5s infinite;
+  animation: UpAndDown 1s infinite;
 }
 
 @keyframes UpAndDown {
   0% {
     opacity: 1;
     padding-top: 1rem;
+  }
+  80% {
+    opacity: 0.85;
+    padding-top: 0.3rem;
   }
   100% {
     opacity: 0.5;
@@ -348,6 +359,7 @@ nav .nav-menu {
   min-height: 100vh;
   height: 100%;
   margin-bottom: 10rem;
+  position: relative;
 }
 
 #contact {
