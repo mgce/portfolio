@@ -66,7 +66,7 @@ a:hover{
     font-weight: 400;
     display: inline;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     font-size: 12px;
     background:$color-graphite;
     color:$color-grey;
@@ -142,6 +142,7 @@ nav{
 
 .arrow-down{
     grid-column-start: 2;
+    grid-row: 3;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -151,6 +152,15 @@ nav{
     .mouse-arrow{
         width: 0.8rem;
         animation: UpAndDown 1s infinite;
+    }
+}
+
+.arrow-container{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    a:nth-child(even){
+        padding-left: 2px;
     }
 }
 
@@ -266,7 +276,5 @@ nav{
         margin: 0;
     }
 }
-
-
 
 @import 'styles-768';

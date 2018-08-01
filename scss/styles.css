@@ -193,13 +193,69 @@ textarea {
   resize: none;
 }
 
-.dd-list ul {
-  list-style: none;
+.dd-wrapper {
+  margin-bottom: 5rem;
 }
-.dd-list ul li {
+
+.dd-header {
+  display: inline;
+}
+.dd-header h1 {
   display: inline;
 }
 
+.dd-dots {
+  display: inline;
+  position: absolute;
+  padding-top: 3rem;
+  font-size: 20pt;
+}
+
+.dd-selectedItem {
+  animation: AppearTitleFromBottom 1s 1;
+  transition: visibility 0s, opacity 0.5s linear;
+  display: inline;
+  padding-left: 1rem;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.dd-arrow {
+  display: inline;
+  position: absolute;
+  padding-left: 17rem;
+  padding-top: 1.5rem;
+}
+.dd-arrow img {
+  width: 2rem;
+  transition: all 1s;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.dd-list {
+  list-style: none;
+}
+
+.dd-list-item {
+  display: inline;
+  font-weight: 400;
+  padding: 1rem;
+  font-size: 15pt;
+}
+
+@keyframes AppearTitleFromBottom {
+  0% {
+    opacity: 0;
+    margin-top: 10rem;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0rem;
+  }
+}
 body {
   background-color: #EDEDED;
   color: #2B2B2B;
@@ -370,6 +426,7 @@ nav .nav-menu {
   grid-template-columns: 5% 1fr 5%;
   height: 100%;
   background: #2B2B2B;
+  position: relative;
 }
 #contact .background-number {
   color: #1d1d1d;
