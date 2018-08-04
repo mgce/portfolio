@@ -1,14 +1,13 @@
 @media screen and (max-width: 600px){
     .container{
         display: block;
-        margin-left: 1rem;
-        margin-right: 1rem;
     }
     .header{
         width: 100%
     }
 
 #logotype{
+    margin-left: 1rem;
     .open-menu{
         z-index: 2;
         color: white;
@@ -29,7 +28,9 @@ nav{
             }
         }
         #nav-menu-items{
-            display: grid;
+            display: none;
+            align-items: center;
+            justify-content: center;
             margin: 0;
             opacity: 0;
             grid-template-rows: repeat(3, 1fr);
@@ -78,9 +79,22 @@ nav{
 }
 
 .contact{
-    display: 
+    display: block;
 }
 
+}
+
+@media screen and (min-width: 600px){
+    .container{
+        display:block;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .post{
+        ul{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
 
 @media screen and (min-width: 768px){

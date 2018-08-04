@@ -3,9 +3,13 @@ function expandHamburger() {
     var hamburger = document.getElementById("hamburger");
     if (hamburger.className === "") {
         menu.style.opacity = "1";
+        menu.style.display = "flex";
+        document.body.style.overflow = "hidden";
         hamburger.className = "open";
     } else {
         menu.style.opacity = "0";
+        menu.style.display = "none";
+        document.body.style.overflow = "";
         hamburger.className = "";
     }
 }
