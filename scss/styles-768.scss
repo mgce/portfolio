@@ -57,7 +57,7 @@ nav{
     }
 
     .text-section{
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 }
 
@@ -68,7 +68,7 @@ nav{
     }
     100%{
         opacity: 1;
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 } 
 
@@ -87,8 +87,6 @@ nav{
 @media screen and (min-width: 600px){
     .container{
         display:block;
-        margin-left: 1rem;
-        margin-right: 1rem;
     }
     .post{
         ul{
@@ -100,8 +98,6 @@ nav{
 @media screen and (min-width: 768px){
     .container{
         display:block;
-        margin-left: 1rem;
-        margin-right: 1rem;
     }
     .post{
         ul{

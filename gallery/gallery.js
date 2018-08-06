@@ -1,7 +1,7 @@
 'use strict';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import '../scss/styles.scss';
+// import '../scss/styles.scss';
 import axios from 'axios';
 
 const url = "http://paulinaszmid.pl/wp-json/wp/v2/";
